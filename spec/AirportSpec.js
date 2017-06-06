@@ -19,4 +19,9 @@ describe("Airport", function() {
     airport.land(plane);
     expect(plane.land).toHaveBeenCalled();
   });
+
+  it("Has an empty array to store plane objects in", function() {
+    airport = new Airport();
+    expect(airport.planes).toEqual([]);
+  });
 });
