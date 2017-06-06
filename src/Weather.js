@@ -1,3 +1,5 @@
+'use strict';
+
 var Weather = function(){
   this.conditions = ["Stormy", "Clear", "Clear", "Clear"]
 };
