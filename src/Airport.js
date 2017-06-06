@@ -1,4 +1,4 @@
-function Airport(capacity) {
+var Airport = function(capacity) {
   this.capacity = capacity || 10
   this.planes = []
   this.weather = new Weather();
