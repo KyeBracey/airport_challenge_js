@@ -10,4 +10,5 @@ Airport.prototype.land = function(plane) {
 
 Airport.prototype.takeOff = function(plane) {
   plane.takeOff()
+  this.planes.splice(this.planes.indexOf(plane), 1)
 }

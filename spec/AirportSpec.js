@@ -38,4 +38,14 @@ describe("Airport", function() {
     airport.takeOff(plane);
     expect(plane.takeOff).toHaveBeenCalled();
   })
+
+  it("Removes a plane from the array", function() {
+    airport = new Airport();
+    var plane1 = jasmine.createSpyObj('plane', ['land', 'takeOff']);
+    var plane2 = jasmine.createSpyObj('plane', ['land', 'takeOff']);
+    airport.land(plane1);
+    airport.land(plane2);
+    airport.takeOff(plane1);
+    expect(airport.planes).toEqual([plane2])
+  })
 });
