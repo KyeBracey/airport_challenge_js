@@ -24,11 +24,11 @@ describe("Airport", function() {
     airport = new Airport();
     expect(airport.planes).toEqual([]);
   });
+
   it("Adds a plane to the array", function() {
     airport = new Airport();
     var plane = jasmine.createSpyObj('plane', ['land']);
     airport.land(plane);
     expect(airport.planes).toEqual([plane])
-
   })
 });
