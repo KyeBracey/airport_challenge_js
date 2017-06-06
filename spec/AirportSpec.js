@@ -48,4 +48,12 @@ describe("Airport", function() {
     airport.takeOff(plane1);
     expect(airport.planes).toEqual([plane2])
   })
+  it("Will not allow planes to land when it is full", function(){
+    airport = new Airport(1);
+    var plane1 = jasmine.createSpyObj('plane', ['land', 'takeOff']);
+    var plane2 = jasmine.createSpyObj('plane', ['land', 'takeOff']);
+    airport.land(plane1);
+    expect(function(){airport.land(plane2)}).toThrow(new Error("Unable to land, airport is full"))
+  })
+
 });
